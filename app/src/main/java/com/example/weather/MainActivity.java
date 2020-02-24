@@ -2,7 +2,10 @@ package com.example.weather;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Activity;
+import android.app.AlertDialog;
 import android.app.Dialog;
+import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.StrictMode;
@@ -36,6 +39,8 @@ import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLConnection;
+import java.util.HashSet;
+import java.util.Set;
 
 import io.reactivex.Observable;
 import io.reactivex.android.schedulers.AndroidSchedulers;
@@ -43,6 +48,8 @@ import io.reactivex.disposables.CompositeDisposable;
 import io.reactivex.functions.Consumer;
 import io.reactivex.schedulers.Schedulers;
 import retrofit2.Retrofit;
+
+
 
 public class MainActivity extends AppCompatActivity {
     private LinearLayout Weather_panel;
@@ -64,8 +71,13 @@ public class MainActivity extends AppCompatActivity {
     private ImageView Pic;
     CompositeDisposable compositeDisposable;
     Weather weather = new Weather();
+    private TextView TVCCity;
+
 
     public void postRequest(String urlStr, String jsonBodyStr) throws IOException {
+
+
+
         URL url = new URL(urlStr);
         HttpURLConnection httpURLConnection = (HttpURLConnection) url.openConnection();
         httpURLConnection.setDoOutput(true);
@@ -106,6 +118,7 @@ public class MainActivity extends AppCompatActivity {
         TVRain = (TextView) findViewById(R.id.Rain);
         TVRainValue = (TextView) findViewById(R.id.ValueRain);
         Pic = (ImageView) findViewById(R.id.pic);
+        TVCCity = (TextView)findViewById(R.id.citys);
 
         //Weather_panel = (LinearLayout)item
 
@@ -117,12 +130,18 @@ public class MainActivity extends AppCompatActivity {
         }
 
 
+
         BOk.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 String NeedfulCity = ETString.getText().toString();
-                if (NeedfulCity == "") {
-
+                if (NeedfulCity.length() == 0) {
+                    AlertDialog.Builder errorWindow = new AlertDialog.Builder(MainActivity.this);
+                    errorWindow.setMessage("Вы не ввели город")
+                            .setCancelable(true);
+                    AlertDialog a = errorWindow.create();
+                    a.setTitle("Ошибка");
+                    a.show();
 
                 } else {
                     String url = "http://api.openweathermap.org/data/2.5/find?q=" + NeedfulCity + "&type=like&APPID=c3f93d23f4afc931f07743b1f8a9ffc6";
@@ -188,8 +207,12 @@ public class MainActivity extends AppCompatActivity {
                                     TVRainValue.setText("Облачно");
                                     Pic.setImageResource(R.mipmap.clouds_foreground);
                                     break;
-                                case "Haze":
+                                case "Mist":
                                     TVRainValue.setText("Туман");
+                                    Pic.setImageResource(R.mipmap.haze_foreground);
+                                    break;
+                                case "Haze":
+                                    TVRainValue.setText("Дымка");
                                     Pic.setImageResource(R.mipmap.haze_foreground);
                                     break;
                                 case "Clear":
@@ -202,6 +225,7 @@ public class MainActivity extends AppCompatActivity {
                             }
 
 
+                            TVCCity.setText(NeedfulCity);
                             TVValueTemp.setText(temp);
                             TVValuePressure.setText(pressure);
                             TVValuehumidity.setText(humidity);
@@ -218,6 +242,7 @@ public class MainActivity extends AppCompatActivity {
 
                     } catch (MalformedURLException e) {
                         e.printStackTrace();
+
                     } catch (IOException e) {
                         e.printStackTrace();
                     }

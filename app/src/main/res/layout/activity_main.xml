@@ -4,12 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:background="#8186d5"
+
     android:layout_height="match_parent"
 
     tools:context=".MainActivity"
     android:theme="@android:style/Theme.Black.NoTitleBar">
 
     <LinearLayout
+        android:id="@+id/linearLayout"
         android:layout_width="match_parent"
         android:layout_height="60dp"
         app:layout_constraintEnd_toStartOf="parent"
@@ -17,23 +19,22 @@
         app:layout_constraintTop_toTopOf="parent">
 
 
-
         <EditText
             android:id="@+id/ChooseCity"
             android:layout_width="wrap_content"
             android:layout_height="40dp"
 
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="20dp"
             android:background="#DFF7F7"
-            android:ems="10"
-            android:textColorHint="#8186d5"
             android:backgroundTint="#c6cbef"
+            android:ems="10"
             android:hint="Введите название города"
             android:inputType="textPersonName"
             android:textColor="#000000"
+            android:textColorHint="#8186d5"
             app:layout_constraintBottom_toBottomOf="parent"
-            android:layout_marginTop="20dp"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.08"
             app:layout_constraintStart_toStartOf="parent"
@@ -45,12 +46,12 @@
             android:id="@+id/Ok"
             android:layout_width="76dp"
             android:layout_height="40dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="30dp"
             android:layout_marginBottom="84dp"
+            android:background="#e3e7f1"
             android:hint="Город"
             android:text="Ok"
-            android:layout_marginTop="20dp"
-            android:background="#e3e7f1"
-            android:layout_marginRight="30dp"
             android:textColor="#494ca2"
 
             app:layout_constraintBottom_toBottomOf="parent"
@@ -62,6 +63,21 @@
 
     </LinearLayout>
 
+    <TextView
+        android:id="@+id/citys"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:gravity="center"
+        android:textSize="25sp"
+        app:layout_constraintBottom_toBottomOf="@+id/pic"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.469"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.130">
+
+    </TextView>
 
     <TableLayout
 
