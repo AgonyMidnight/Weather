@@ -1,0 +1,290 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="#8186d5"
+    android:layout_height="match_parent"
+
+    tools:context=".MainActivity"
+    android:theme="@android:style/Theme.Black.NoTitleBar">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        app:layout_constraintEnd_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+
+        <EditText
+            android:id="@+id/ChooseCity"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+
+            android:background="#DFF7F7"
+            android:ems="10"
+            android:textColorHint="#8186d5"
+            android:backgroundTint="#c6cbef"
+            android:hint="Введите название города"
+            android:inputType="textPersonName"
+            android:textColor="#000000"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.08"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.023" />
+
+
+        <Button
+            android:id="@+id/Ok"
+            android:layout_width="76dp"
+            android:layout_height="40dp"
+            android:layout_marginBottom="84dp"
+            android:hint="Город"
+            android:text="Ok"
+            android:layout_marginTop="20dp"
+            android:background="#e3e7f1"
+            android:layout_marginRight="30dp"
+            android:textColor="#494ca2"
+
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.767"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.011" />
+
+    </LinearLayout>
+
+
+    <TableLayout
+
+        android:id="@+id/tableLayout"
+        android:layout_width="331dp"
+        android:layout_height="183dp"
+        android:gravity="center"
+        android:stretchColumns="1"
+        android:background="#c6cbef"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.354">
+
+        <TableRow>
+
+            <TextView
+                android:id="@+id/Temperature"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Температура"
+
+                android:textColor="#000000"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.099"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.134" />
+
+            <TextView
+                android:id="@+id/ValueTemp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="-"
+                android:textColor="#000000"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.735"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.133" />
+        </TableRow>
+
+        <TableRow>
+
+            <TextView
+                android:id="@+id/humidity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Влажность"
+                android:textColor="#000000"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.101"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.373" />
+
+            <TextView
+
+                android:id="@+id/Valuehumidity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="-"
+                android:textColor="#000000"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.735"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.373" />
+
+        </TableRow>
+
+        <TableRow>
+
+            <TextView
+                android:id="@+id/pressure"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Давление"
+                android:textColor="#000000"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.101"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.22" />
+
+            <TextView
+                android:id="@+id/ValuePressure"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="-"
+                android:textColor="#000000"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.735"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.22" />
+        </TableRow>
+
+        <TableRow>
+
+            <TextView
+                android:id="@+id/Wind"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ветер"
+                android:textColor="#000000"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.101"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.298" />
+
+            <TextView
+                android:id="@+id/ValueWind"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="-"
+                android:textColor="#000000"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.735"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.298" />
+        </TableRow>
+
+        <TableRow>
+
+            <TextView
+                android:id="@+id/Cloud"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Облачность"
+                android:textColor="#000000"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.099"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.134" />
+
+            <TextView
+                android:id="@+id/ValueCloud"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="-"
+                android:textColor="#000000"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.735"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.133" />
+        </TableRow>
+
+        <TableRow>
+
+            <TextView
+                android:id="@+id/Rain"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Погода"
+                android:textColor="#000000"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.099"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.134" />
+
+            <TextView
+                android:id="@+id/ValueRain"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="-"
+                android:textColor="#000000"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.735"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.133" />
+        </TableRow>
+    </TableLayout>
+
+
+    <ImageView
+        android:id="@+id/pic"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.908"
+        tools:layout_editor_absoluteX="0dp"
+
+
+        />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
