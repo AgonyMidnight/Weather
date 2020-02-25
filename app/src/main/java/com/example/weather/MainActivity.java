@@ -178,13 +178,13 @@ public class MainActivity extends AppCompatActivity {
 
                             String pressure = JSON_main.getString("pressure");
                             pressure = pressure + "00";
-                            pressure = Integer.toString(Integer.parseInt((pressure)) / 133) + " mmHg";
+                            pressure = Integer.toString(Integer.parseInt((pressure)) / 133) + " мм рт.ст.";
 
                             String humidity = JSON_main.getString("humidity") + " %";
 
 
                             JSONObject JSON_wind = JSON.getJSONObject("wind");
-                            String wind = JSON_wind.getString("speed") + " m/s";
+                            String wind = JSON_wind.getString("speed") + " м/с";
 
                             JSONObject JSON_clouds = JSON.getJSONObject("clouds");
                             String clouds = JSON_clouds.getString("all") + " %";
